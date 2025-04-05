@@ -1,81 +1,144 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Linktree Clone - Oliver Template</title>  
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
-    <style>  
-        body {  
-            font-family: 'Roboto', sans-serif;  
-            background-color: #9DD6F9; /* 30% more intense light blue background */  
-            margin: 0;  
-            padding: 20px 0; /* Adjust padding to move content to the top */  
-            display: flex;  
-            justify-content: center;  
-            align-items: flex-start; /* Align items to the top */  
-            height: 100vh;  
-        }  
-        .container {  
-            width: 90%;  
-            max-width: 400px;  
-            text-align: center;  
-        }  
-        .profile-picture {  
-            width: 100px;  
-            height: 100px;  
-            border-radius: 50%;  
-            margin: 20px auto 10px;  
-            background-color: #e55a5a; /* 15% less intense red color */  
-            background-image: url('profile-picture.jpg'); /* Replace with your profile picture URL */  
-            background-size: cover;  
-            background-position: center;  
-        }  
-        .bio {  
-            font-size: 18px;  
-            font-weight: 700;  
-            color: #333;  
-            margin-top: 10px;  
-            margin-bottom: 10px;  
-        }  
-        .description {  
-            font-size: 14px;  
-            color: #333;  
-            margin-bottom: 20px;  
-        }  
-        .links {  
-            margin: 20px 0;  
-        }  
-        .link-button {  
-            display: block;  
-            width: 90%;  
-            max-width: 300px;  
-            margin: 10px auto;  
-            padding: 15px 0;  
-            border-radius: 30px;  
-            background-color: #FFDD00; /* 15% less intense yellow button */  
-            color: #E45E23; /* Adjusted to 10% more intense orange color */  
-            text-decoration: none;  
-            font-size: 16px;  
-            font-weight: 700;  
-            transition: background-color 0.3s;  
-        }  
-        .link-button:hover {  
-            background-color: #ffa000;  
-        }  
-    </style>  
-</head>  
-<body>  
-    <div class="container">  
-        <div class="profile-picture"></div>  
-        <div class="bio">Oliver Maicher</div>  
-        <div class="description">Technology and Business</div>  
-        <div class="links">  
-            <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher/" class="link-button">LinkedIn</a>  
-           
-            <a target="_blank" href="https://api.whatsapp.com/send/?phone=918828228087" class="link-button">WhatsApp AI Chatbot</a>  
-            <a target="_blank" href="https://buymeacoffee.com/olivermaicher" class="link-button">OnlyFans 👅</a>  
-        </div>  
-    </div>  
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oliver Maicher - All Tech</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6d6 0%, #ff9966 100%);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 360px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+    }
+    
+    .profile {
+      margin-bottom: 20px;
+    }
+    
+    .profile-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+    }
+    
+    .name {
+      margin: 10px 0 5px;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    
+    .bio {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    
+    .link {
+      display: block;
+      background-color: white;
+      color: #333;
+      text-decoration: none;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    
+    .link:hover {
+      background-color: #f8f8f8;
+      transform: translateY(-2px);
+    }
+    
+    .link-container {
+      perspective: 1000px;
+    }
+    
+    .swinging-link {
+      transform-origin: center top;
+      animation: continuousSwing 1.5s ease-in-out infinite;
+      background-color: #7fc5bf; /* Teal/turquoise highlight color */
+      color: white;
+      font-weight: bold;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .swinging-link:hover {
+      background-color: #66b3ad;
+      color: white;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      margin: 0 10px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    
+    .social-icon:hover {
+      opacity: 1;
+    }
+    
+    @keyframes continuousSwing {
+      0% {
+        transform: rotate(5deg);
+      }
+      50% {
+        transform: rotate(-5deg);
+      }
+      100% {
+        transform: rotate(5deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="/api/placeholder/80/80" alt="Tania Vi" class="profile-img">
+      <h1 class="name">Oliver Maicher</h1>
+      <p class="bio">Efficiency through Technology</p>
+    </div>
+    
+    <div class="link-container">
+      <a href="#" class="link swinging-link">Free AI Course for Businesses</a>
+    </div>
+    
+    <a href="#" class="link">Linkedin</a>
+    <a href="#" class="link">Blog</a>
+    <a href="#" class="link">Affiliate Links</a>
+    
+    <div class="social-icons">
+      <a href="#"><img src="https://content.linkedin.com/content/dam/me/news/en-us/blog/authors/l/li-logo.png.original.png" alt="Linkedin" class="social-icon"></a>
+      <a href="#"><img src="/api/placeholder/24/24" alt="Facebook" class="social-icon"></a>
+      <a href="#"><img src="/api/placeholder/24/24" alt="Instagram" class="social-icon"></a>
+      <a href="#"><img src="/api/placeholder/24/24" alt="Spotify" class="social-icon"></a>
+    </div>
+  </div>
+</body>
+</html>

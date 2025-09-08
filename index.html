@@ -5,151 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oliver Maicher | Links</title>
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ffd6d6 0%, #ff9966 100%);
+    :root {
+      --bg: #0b0f14;
+      --panel: #111620;
+      --text: #e8eef6;
+      --muted: #b2c2d6;
+      --brand: #7c5cff;
+      --brand-2: #00d1b2;
+      --accent: #ffb454;
+      --danger: #ff5d5d;
+      --ok: #36d399;
+      --focus: #5ad1ff;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --shadow-sm: 0 6px 16px rgba(0, 0, 0, .25);
+      --maxw: 500px;
     }
-    
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fb;
+        --panel: #ffffff;
+        --text: #0e1116;
+        --muted: #5b6b7d;
+        --brand: #5b3eff;
+        --brand-2: #04b6a1;
+        --accent: #e88b14;
+        --danger: #e54848;
+        --ok: #17a36c;
+        --focus: #1aa3e8;
+      }
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+      background: linear-gradient(180deg, var(--bg), #0b0f14 60%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .container {
-      width: 90%;
-      max-width: 360px;
+      width: 100%;
+      max-width: var(--maxw);
       padding: 20px;
       text-align: center;
-      border-radius: 20px;
     }
-    
+
     .profile {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
-    
+
     .profile-img {
-      width: 80px;
-      height: 80px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid white;
+      border: 3px solid transparent;
+      background-image: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow-sm);
     }
-    
+
     .name {
-      margin: 10px 0 5px;
-      color: white;
-      font-size: 22px;
+      margin: 12px 0 6px;
+      font-size: 24px;
       font-weight: bold;
     }
-    
+
     .bio {
-      color: white;
-      margin-bottom: 20px;
-      font-size: 14px;
+      font-size: 16px;
+      color: var(--muted);
     }
-    
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 15px;
+      color: var(--brand-2);
+      font-style: italic;
+    }
+
     .link {
       display: block;
-      background-color: white;
-      color: #333;
+      background: var(--panel);
+      color: var(--text);
       text-decoration: none;
-      padding: 12px;
+      padding: 14px;
       margin: 12px 0;
-      border-radius: 8px;
-      font-weight: 500;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s, background-color 0.2s;
-      font-weight: bold;
+      border-radius: var(--radius);
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, background 0.2s ease;
     }
-    
+
     .link:hover {
-      background-color: #f8f8f8;
       transform: translateY(-2px);
+      background: color-mix(in srgb, var(--panel), var(--brand) 12%);
     }
-    
-    .link-container {
-      perspective: 1000px;
-    }
-    
+
     .swinging-link {
-      transform-origin: center top;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff !important;
+      border: 2px solid rgba(255, 255, 255, 0.15);
       animation: continuousSwing 1.5s ease-in-out infinite;
-      background-color: #7fc5bf; /* Teal/turquoise highlight color */
-      color: white;
-      font-weight: bold;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: var(--shadow);
     }
-    
-    .swinging-link:hover {
-      background-color: #66b3ad;
-      color: white;
-    }
-    
+
     .social-icons {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 28px;
+      gap: 16px;
     }
-    
+
     .social-icon {
-      width: 24px;
-      height: 24px;
-      margin: 0 10px;
-      opacity: 0.8;
-      transition: opacity 0.2s;
+      width: 28px;
+      height: 28px;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
     }
-    
+
     .social-icon:hover {
       opacity: 1;
     }
-    
+
     @keyframes continuousSwing {
-      0% {
-        transform: rotate(5deg);
-      }
-      50% {
-        transform: rotate(-5deg);
-      }
-      100% {
-        transform: rotate(5deg);
-      }
+      0% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="profile">
-      <img src="transparent_2x.png" alt="profile-img" class="profile-img">
+      <img src="https://cdn.bitrix24.de/b8437043/landing/a4d/a4d1dc21c4ac3efb26c2eaee1b4c233c/transparent_2x.png" alt="profile-img" class="profile-img">
       <h1 class="name">Oliver Maicher</h1>
-      <p class="bio">Hacker and Security Professional</p>
+      <p class="bio">Founder and Hacker | 14k+ LinkedIn Followers</p>
+      <p class="tagline">Helping businesses stay secure while exploring the world.</p>
     </div>
     
-    <div class="link-container">
-    <a target="_blank" href="https://burp.olivermaicher.eu/bugbounty" class="link swinging-link default-link">✴️ Worried about Hackers?</a>
-    </div>
+    <a target="_blank" href="https://burp.olivermaicher.eu/bugbounty" class="link swinging-link">✴️ Protect Your Business from Hackers</a>
+    <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher" class="link">Connect on LinkedIn</a>
+    <a target="_blank" href="https://open.spotify.com/show/7rCHlv8CUgjrHyEbaA5Z6B" class="link">🎙️ Listen on Spotify</a>
+    <a target="_blank" href="https://buymeacoffee.com/olivermaicher#recentTransactions" class="link">🌟 Testimonials</a>
+    <a target="_blank" href="https://trips.olivermaicher.eu/" class="link">🚩 My Travel Map</a>
+    <a target="_blank" href="https://mail.olivermaicher.eu/" class="link">📧 Subscribe: Stories from My Travels and Business</a>
 
-    <a target="_blank" href="https://l.linklyhq.com/l/27UN6" class="link">Brand Advocate for...</a>
-    <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher" class="link">14.000+ LinkedIn Followers</a>
-    <a target="_blank" href="open.spotify.com/show/7rCHlv8CUgjrHyEbaA5Z6B" class="link">Listen on Spotify</a>
-    <a target="_blank" href="https://buymeacoffee.com/olivermaicher#recentTransactions" class="link">Testimonials</a>
-
-    <a target="_blank" href="https://trips.olivermaicher.eu/" class="link">🚩 Explored Destinations</a>
-
-    <a target="_blank" href="https://mail.olivermaicher.eu/" class="link">📧 Chronicles from around the World</a>
-
-   
-
-    
-
-
-
-
-    
     <div class="social-icons">
-      <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher"><img src="https://content.linkedin.com/content/dam/me/news/en-us/blog/authors/l/li-logo.png.original.png" alt="Linkedin" class="social-icon"></a>
-      <a target="_blank" href="https://api.whatsapp.com/send/?phone=4915144959213&text=Hi+Oliver+Maicher."><img src="https://cdn-icons-png.freepik.com/256/2496/2496112.png" alt="WhatsApp" class="social-icon"></a>
+      <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher">
+        <img src="https://content.linkedin.com/content/dam/me/news/en-us/blog/authors/l/li-logo.png.original.png" alt="Linkedin" class="social-icon">
+      </a>
+      <!-- <a target="_blank" href="https://api.whatsapp.com/send/?phone=4915144959213&text=Hi+Oliver+Maicher.">
+        <img src="https://cdn-icons-png.freepik.com/256/2496/2496112.png" alt="WhatsApp" class="social-icon"> -->
+      </a>
     </div>
   </div>
 </body>

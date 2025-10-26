@@ -1,249 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Private Bug Bounty Hub</title>
-
-<style>
-  /* === brand style === */
-  :root {
-    --bg: #0b0f14;
-    --panel: #111620;
-    --text: #e8eef6;
-    --muted: #b2c2d6;
-    --brand: #7c5cff;
-    --brand-2: #00d1b2;
-    --accent: #ffb454;
-    --danger: #ff5d5d;
-    --ok: #36d399;
-    --focus: #5ad1ff;
-    --radius: 16px;
-    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-    --shadow-sm: 0 6px 16px rgba(0, 0, 0, .25);
-    --maxw: 1100px;
-  }
-  @media (prefers-color-scheme: light) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oliver Maicher | Links</title>
+  <style>
     :root {
-      --bg: #f6f8fb;
-      --panel: #ffffff;
-      --text: #0e1116;
-      --muted: #5b6b7d;
-      --brand: #5b3eff;
-      --brand-2: #04b6a1;
-      --accent: #e88b14;
-      --danger: #e54848;
-      --ok: #17a36c;
-      --focus: #1aa3e8;
+      --bg: #0b0f14;
+      --panel: #111620;
+      --text: #e8eef6;
+      --muted: #b2c2d6;
+      --brand: #7c5cff;
+      --brand-2: #00d1b2;
+      --accent: #ffb454;
+      --danger: #ff5d5d;
+      --ok: #36d399;
+      --focus: #5ad1ff;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --shadow-sm: 0 6px 16px rgba(0, 0, 0, .25);
+      --maxw: 500px;
     }
-  }
-  html,body { height:100%; }
-  body{
-    margin:0;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(180deg, var(--bg), #0b0f14 60%);
-    color: var(--text);
-  }
-  a { color:var(--brand); text-decoration:none; }
-  a:hover{ opacity:.95; }
-  .container { max-width:var(--maxw); margin:0 auto; padding:20px; }
-  header{
-    position:sticky; top:0; z-index:10;
-    backdrop-filter: saturate(140%) blur(12px);
-    background: color-mix(in hsl, var(--bg), transparent 35%);
-    border-bottom:1px solid color-mix(in hsl, var(--muted), transparent 70%);
-  }
-  .nav{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 20px; }
-  .brand{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px; }
-  .logo{ width:36px; height:36px; border-radius:9px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:var(--shadow-sm); }
-  .nav a{ padding:8px 12px; border-radius:999px; font-weight:600; color:var(--text); opacity:.9; }
-  .cta{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff !important; box-shadow:var(--shadow-sm); }
-  .hero{ display:grid; gap:10px; padding:30px 0 8px; text-align:center; }
-  .hero h1{ font-size:clamp(28px,5vw,40px); margin:0; }
-  .hero p{ color:var(--muted); margin:0; font-size:16px; }
-  .actions{ display:flex; gap:10px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
-  .btn{ border:0; border-radius:999px; padding:10px 16px; font-weight:700; cursor:pointer; background:var(--panel); color:var(--text); box-shadow:var(--shadow-sm); }
-  .btn:hover{ transform:translateY(-1px); }
-  .card{ background:var(--panel); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
-  .grid{ display:grid; gap:14px; margin-top:26px; }
-  @media(min-width:900px){ .grid{ grid-template-columns: repeat(2,1fr); } }
 
-  /* Company card */
-  .program {
-    display:flex; gap:14px; align-items:flex-start; padding:14px; border-radius:12px;
-  }
-  .avatar {
-    width:56px; height:56px; border-radius:10px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); flex-shrink:0;
-    display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff;
-  }
-  .prog-body { flex:1; min-width:0; }
-  .prog-head { display:flex; justify-content:space-between; gap:12px; align-items:center; }
-  .prog-title { font-size:18px; margin:0; }
-  .prog-sub { color:var(--muted); font-size:13px; margin-top:4px; }
-  .small { padding:8px 10px; border-radius:999px; font-weight:700; font-size:13px; cursor:pointer; border:0; background:transparent; color:var(--text); box-shadow:none; }
-  .outline { border:1px solid color-mix(in hsl,var(--muted), transparent 80%); }
-  .danger { background: linear-gradient(135deg,var(--danger),#ff7b7b); color:#fff; box-shadow:var(--shadow-sm); }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fb;
+        --panel: #ffffff;
+        --text: #0e1116;
+        --muted: #5b6b7d;
+        --brand: #5b3eff;
+        --brand-2: #04b6a1;
+        --accent: #e88b14;
+        --danger: #e54848;
+        --ok: #17a36c;
+        --focus: #1aa3e8;
+      }
+    }
 
-  .details { margin-top:10px; color:var(--muted); font-size:14px; display:none; }
-  .details.open { display:block; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+      background: linear-gradient(180deg, var(--bg), #0b0f14 60%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  footer { text-align:center; color:var(--muted); margin:40px 0 20px; font-size:13px; }
-</style>
+    .container {
+      width: 100%;
+      max-width: var(--maxw);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .profile {
+      margin-bottom: 24px;
+    }
+
+    .profile-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid transparent;
+      background-image: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow-sm);
+    }
+
+    .name {
+      margin: 12px 0 6px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .bio {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 15px;
+      color: var(--brand-2);
+      font-style: italic;
+    }
+
+    .link {
+      display: block;
+      background: var(--panel);
+      color: var(--text);
+      text-decoration: none;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: var(--radius);
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .link:hover {
+      transform: translateY(-2px);
+      background: color-mix(in srgb, var(--panel), var(--brand) 12%);
+    }
+
+    .swinging-link {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff !important;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      animation: continuousSwing 1.5s ease-in-out infinite;
+      box-shadow: var(--shadow);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      opacity: 1;
+    }
+
+    @keyframes continuousSwing {
+      0% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
+    }
+  </style>
 </head>
-
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo"></div>
-        Private Bug Bounty
-      </div>
-      <nav>
-        <a href="#how">How It Works</a>
-        <a href="#programs">Programs</a>
-        <a id="report-cta" class="cta" href="#" target="_blank">Report via Telegram</a>
-      </nav>
+  <div class="container">
+    <div class="profile">
+      <img src="https://cdn.bitrix24.de/b8437043/landing/a4d/a4d1dc21c4ac3efb26c2eaee1b4c233c/transparent_2x.png" alt="profile-img" class="profile-img">
+      <h1 class="name">Oliver Maicher</h1>
+      <p class="bio">Founder and Hacker | 14k+ LinkedIn Followers</p>
+      <p class="tagline">Helping businesses stay secure while exploring the world.</p>
     </div>
-  </header>
+    
+    <a target="_blank" href="https://burp.olivermaicher.eu/bugbounty" class="link swinging-link">✴️ Protect Your Business from Hackers</a>
+    <a target="_blank" href="https://linkly.link/27UN6" class="link">I'm Brand Advocate for...</a>
+    <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher" class="link">Connect on LinkedIn</a>
+    <a target="_blank" href="https://open.spotify.com/show/7rCHlv8CUgjrHyEbaA5Z6B" class="link">🎙️ Listen on Spotify</a>
+    <a target="_blank" href="https://buymeacoffee.com/olivermaicher#recentTransactions" class="link">🌟 Testimonials</a>
+    <a target="_blank" href="https://trips.olivermaicher.eu/" class="link">🚩 My Travel Map</a>
+    <a target="_blank" href="https://mail.olivermaicher.eu/" class="link">📧 Subscribe: Stories from My Travels and Business</a>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Private Bug Bounty</h1>
-      <p>Choose a program, read the scope, and report directly via Telegram.</p>
-      <div class="actions">
-        <a href="#programs" class="btn">View Programs</a>
-        <a id="quick-report" class="btn" href="#" target="_blank">Quick Report</a>
-      </div>
-    </section>
-
-    <section id="how" class="card" style="margin-top:26px;">
-      <h2 style="margin:0 0 8px;">How It Works</h2>
-      <p style="margin:0;color:var(--muted);line-height:1.6;">
-        1️⃣ Pick a partner company’s program below.<br>
-        2️⃣ Check its allowed targets and short rules.<br>
-        3️⃣ Click <strong>Report</strong>,  Telegram opens.<br>
-        4️⃣ Add vulnerability details, PoC, and your contact. Send. Done.
-      </p>
-    </section>
-
-    <section id="programs" class="grid" aria-label="Partner Programs" style="margin-top:22px;">
-      <!-- Program cards populated by JS -->
-    </section>
-
-    <section class="card" style="text-align:center;margin-top:26px;">
-      <h3 style="margin:0 0 8px;">Security Guidelines</h3>
-      <p style="margin:0;color:var(--muted);line-height:1.6;">
-        Only test authorized assets, avoid data extraction or DoS. All submitted reports remain confidential.
-      </p>
-    </section>
-
-    <footer>
-        <small>Submit responsibly. Sensitive data should be shared encrypted.</small>
-<br>
-<br>
-      Private Bug Bounty • Created by <strong>Oliver Maicher</strong>.
-                <br>
-      
-      <a target="_blank" href="https://burp.olivermaicher.eu/impressum.html">Impressum</a>
-<a target="_blank" href="https://burp.olivermaicher.eu/datenschutz.html">Datenschutz</a></p>
-    </footer>
-  </main>
-
-<script>
-/*
-  CONFIG
-  - Replace TELEGRAM_HANDLE with your Telegram username (without @)
-  - Replace samplePrograms with your actual partner companies
-*/
-const TELEGRAM_HANDLE = "maiosec"; // your Telegram username
-const samplePrograms = [
-  {
-    id: "beroomie",
-    name: "Beroomie.App",
-    description: "Housing and Flatmates Platform — App only. Rewards by severity. Only staging domains allowed.",
-    assets: "App Download for Testing: https://drive.google.com/drive/folders/1ThjTw1imCbEainW4E9cY2iHQ9S1Xv202",
-    notes: "No social engineering. No DDoS."
-  }
-  
-];
-
-function telegramShareUrl(text){
-  return `https://t.me/username?text=${encodeURIComponent(this.samplePrograms.id)}`;
-}
-
-https://t.me/username
-
-/* Render partner programs */
-const programsEl = document.getElementById("programs");
-samplePrograms.forEach(p => {
-  const wrap = document.createElement("div");
-  wrap.className = "card program";
-
-  const avatar = document.createElement("div");
-  avatar.className = "avatar";
-  avatar.textContent = p.name.split(" ").map(s=>s[0]).slice(0,2).join("").toUpperCase();
-
-  const body = document.createElement("div");
-  body.className = "prog-body";
-
-  const head = document.createElement("div");
-  head.className = "prog-head";
-
-  const titleDiv = document.createElement("div");
-  const title = document.createElement("h4");
-  title.className = "prog-title";
-  title.textContent = p.name;
-  const sub = document.createElement("div");
-  sub.className = "prog-sub";
-  sub.textContent = p.description;
-  titleDiv.appendChild(title);
-  titleDiv.appendChild(sub);
-
-  const details = document.createElement("div");
-  details.className = "details";
-  details.innerHTML = `
-    <div><strong>Assets:</strong> ${p.assets}</div>
-    <div style="margin-top:6px;"><strong>Notes:</strong> ${p.notes}</div>
-  `;
-
-  const detailsBtn = document.createElement("button");
-  detailsBtn.className = "small outline";
-  detailsBtn.textContent = "Details";
-  detailsBtn.onclick = () => {
-    details.classList.toggle("open");
-    detailsBtn.textContent = details.classList.contains("open") ? "Hide" : "Details";
-  };
-
-  const reportBtn = document.createElement("a");
-  reportBtn.className = "small danger";
-  const prefill = `[Report] Program: ${p.name}\nAssets: ${p.assets}\nSeverity: (high / medium / low)\nSummary:\nPoC / Steps:\nContact:\n`;
-  reportBtn.href = telegramShareUrl(prefill);
-  reportBtn.target = "_blank";
-  reportBtn.rel = "noopener noreferrer";
-  reportBtn.textContent = "Report";
-
-  const actions = document.createElement("div");
-  actions.appendChild(detailsBtn);
-  actions.appendChild(reportBtn);
-
-  head.appendChild(titleDiv);
-  head.appendChild(actions);
-  body.appendChild(head);
-  body.appendChild(details);
-
-  wrap.appendChild(avatar);
-  wrap.appendChild(body);
-  programsEl.appendChild(wrap);
-});
-
-/* Quick Report and Header CTA */
-const quickText = `[Report] Program: (company name)\nSeverity:\nSummary:\nPoC / Steps:\nContact:\n`;
-document.getElementById("quick-report").href = telegramShareUrl(quickText);
-document.getElementById("report-cta").href = telegramShareUrl(quickText);
-</script>
-
-
-
-
+    <div class="social-icons">
+      <a target="_blank" href="https://www.linkedin.com/in/oliver-maicher">
+        <img src="https://content.linkedin.com/content/dam/me/news/en-us/blog/authors/l/li-logo.png.original.png" alt="Linkedin" class="social-icon">
+      </a>
+          <p><a target="_blank" href="https://burp.olivermaicher.eu/impressum.html">Impressum</a></p>
+<p><a target="_blank" href="https://burp.olivermaicher.eu/datenschutz.html">Datenschutz</a></p>  
+      <!-- <a target="_blank" href="https://api.whatsapp.com/send/?phone=4915144959213&text=Hi+Oliver+Maicher.">
+        <img src="https://cdn-icons-png.freepik.com/256/2496/2496112.png" alt="WhatsApp" class="social-icon"> -->
+      </a>
+    </div>
+  </div>
 </body>
 </html>

@@ -105,13 +105,29 @@
       background: color-mix(in srgb, var(--panel), var(--brand) 12%);
     }
 
-    .swinging-link {
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color: #fff !important;
-      border: 2px solid rgba(255, 255, 255, 0.15);
-      animation: continuousSwing 1.5s ease-in-out infinite;
-      box-shadow: var(--shadow);
-    }
+  .swinging-link {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  animation: subtleVibrate 0.15s linear infinite;
+  box-shadow: var(--shadow);
+}
+
+@keyframes subtleVibrate {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1px, -1px);
+  }
+  50% {
+    transform: translate(-1px, 1px);
+  }
+  75% {
+    transform: translate(1px, 1px);
+  }
+}
+
 
     .social-icons {
       display: flex;
